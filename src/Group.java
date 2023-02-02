@@ -6,24 +6,13 @@ public class Group {
 
     public static void main(String[] args) {
 
- Student.addStudent(25,"Rob", "man",5 );
- Student.addStudent(22,"Den", "man",3);
+        Student.addStudent(29, "Rob", "man", 5);
+        Student.addStudent(22, "Den", "man", 3.5);
+        Student.addStudent(27, "Dana", "woman", 4.4);
+        Student.addStudent(21, "Carlos", "man", 3);
+        Student.addStudent(20, "Alica", "woman", 3.9);
+        Student.delStudent("Rob");
 
-
-
-//        int count = 0;
-
-//        Man[] groop = new Student[10];
-
-
-//
-//        Man man1 = new Man(36, "Alica", "woman");
-//        Man student1 = new Student(21, "Vadim", "man", 4.78);
-//
-//        System.out.println(man1.getInf());
-//        System.out.println(student1.getInf());
-////        Scanner sc = new Scanner(System.in);
-//    }
 
     }
 

@@ -1,34 +1,32 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.ConcurrentModificationException;
+import java.util.*;
 
 public class Student extends Man {
-    private double amark;
-    //    private int count = 0;
-//    Man[] groop = new Student[10];
     public static int count = 0;
-    static ArrayList<Student> groop = new ArrayList<Student>(10);
+    private double amark;
 
-    public static void addStudent(int ag, String nam, String sx, double mr) {
-        groop.add(new Student(ag, nam, sx, mr));
-        count++;
-        System.out.println(Arrays.toString(groop.toArray()));
+    static ArrayList<Student> groop = new ArrayList<>(10);
+
+    public static void addStudent(int ag, String nam, String sx, double mr) throws MyException {
+        if (count>=5) throw new MyException();
+
+            groop.add(new Student(ag, nam, sx, mr));
+            count++;
+            System.out.println(Arrays.toString(groop.toArray()));
+
     }
 
     public static void delStudent(String name) {
 
-        try {
-            for (Student x : groop) {
-                if (name.equals(x.getName())) groop.remove(x);
-
+        Iterator<Student> iter = groop.iterator();
+        while (iter.hasNext()) {
+            if (name.equals(iter.next().getName())) {
+                iter.remove();
                 count--;
             }
 
-            System.out.println(Arrays.toString(groop.toArray()));
         }
-     catch (ConcurrentModificationException e) {}
-}
-
+        System.out.println(Arrays.toString(groop.toArray()));
+    }
 
 
     public Student(int age, String name, String sex, double amark) {

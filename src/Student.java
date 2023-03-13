@@ -34,6 +34,14 @@ public class Student extends Man {
         this.amark = amark;
     }
 
+
+    public double getAmark(){
+        return amark;
+            }
+
+    public void setAmark(double amark) {
+        this.amark = amark;
+    }
     public String getInf() {
         return super.toString() + " , avarage mark = " + amark;
     }

@@ -28,12 +28,18 @@ public class Man {
         return this.age;
     }
 
+    public void setName(String name) { this.name = name;}
+
     public String getName() {
         return name;
     }
 
     public String getSex() {
         return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String toString() {

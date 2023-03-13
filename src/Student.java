@@ -1,17 +1,17 @@
 import java.util.*;
 
-public class Student extends Man {
+public class Student extends Man implements Comparable {
     public static int count = 0;
     private double amark;
 
     static ArrayList<Student> groop = new ArrayList<>(10);
 
     public static void addStudent(int ag, String nam, String sx, double mr) throws MyException {
-        if (count>=5) throw new MyException();
+        if (count >= 10) throw new MyException();
 
-            groop.add(new Student(ag, nam, sx, mr));
-            count++;
-            System.out.println(Arrays.toString(groop.toArray()));
+        groop.add(new Student(ag, nam, sx, mr));
+        count++;
+
 
     }
 
@@ -25,7 +25,7 @@ public class Student extends Man {
             }
 
         }
-        System.out.println(Arrays.toString(groop.toArray()));
+
     }
 
 
@@ -35,13 +35,14 @@ public class Student extends Man {
     }
 
 
-    public double getAmark(){
+    public double getAmark() {
         return amark;
-            }
+    }
 
     public void setAmark(double amark) {
         this.amark = amark;
     }
+
     public String getInf() {
         return super.toString() + " , avarage mark = " + amark;
     }
@@ -51,4 +52,15 @@ public class Student extends Man {
     }
 
 
+    @Override
+    public int compareTo(Object o) {
+
+        Student anotherstudent = (Student) o;
+        if (this.getAge() > anotherstudent.getAge())
+        {return -1;}
+
+        if (this.getAge() < anotherstudent.getAge())
+        { return 1;}
+        return 0;
+    }
 }

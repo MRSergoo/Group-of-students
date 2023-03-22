@@ -18,7 +18,7 @@ public class Group {
     }
 
     public static int addAge() throws MyException {
-        int date = 0;
+        int date;
      System.out.println("InPut integer age");
     Scanner scanner = new Scanner(System.in);
             if (scanner.hasNextInt()) {
@@ -29,7 +29,7 @@ public class Group {
 }
 
     public static String addName() throws MyException {
-        String name = " ";
+        String name ;
         Scanner scanner = new Scanner(System.in);
         System.out.println("InPut name");
         if (scanner.hasNextLine()) {
@@ -40,7 +40,7 @@ public class Group {
         }
 
     public static  String addGender() throws MyException {
-    String gender = " ";
+    String gender;
     Scanner scanner = new Scanner(System.in);
 
     System.out.println("InPut sex");
@@ -51,12 +51,12 @@ public class Group {
        return gender;
 }
 public static Double addMark() throws  MyException {
-    Double amark;
+    double amark;
     Scanner scanner = new Scanner(System.in);
 
     System.out.println("InPut avarage mark");
     if (scanner.hasNextDouble()) {
-        amark = Double.valueOf(scanner.nextDouble());
+        amark = scanner.nextDouble();
     } else throw new MyException();
 
     return amark;

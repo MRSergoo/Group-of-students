@@ -57,10 +57,10 @@ public class Student extends Man implements Comparable {
 
         Student anotherstudent = (Student) o;
         if (this.getAge() > anotherstudent.getAge())
-        {return -1;}
+        {return 1;}
 
         if (this.getAge() < anotherstudent.getAge())
-        { return 1;}
+        { return -1;}
         return 0;
     }
 }

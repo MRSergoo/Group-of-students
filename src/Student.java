@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class Student extends Man implements Comparable {
+
+public class Student extends Man implements Comparable, Cloneable {
     public static int count = 0;
     private double amark;
 
@@ -27,6 +28,22 @@ public class Student extends Man implements Comparable {
         }
 
     }
+
+    public static void sortName() throws CloneNotSupportedException {
+        for (int i = 0; i < groop.size()-1; i++) {
+            Student aa;
+           if  (groop.get(i).getName().compareTo(groop.get(i+1).getName())>0) {
+               aa = (Student)(groop.get(i)).clone();
+               groop.set(i, groop.get(i + 1));
+               groop.set(i + 1, aa);
+           }
+        }
+
+    }
+
+
+
+
 
 
     public Student(int age, String name, String sex, double amark) {
@@ -62,5 +79,10 @@ public class Student extends Man implements Comparable {
         if (this.getAge() < anotherstudent.getAge())
         { return -1;}
         return 0;
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

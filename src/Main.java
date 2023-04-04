@@ -7,12 +7,12 @@ public class Main{
 
     public static void main(String[] args) throws CloneNotSupportedException {
 
-        Group.addStudentInteractive();
+       // Group.addStudentInteractive();
 
         try {
-            Student.addStudent(29, "Rob", "man", 5);
+            Student.addStudent(29, "Bob", "man", 5);
             Student.addStudent(22, "Den", "man", 3.5);
-            Student.addStudent(27, "Sana", "woman", 4.4);
+            Student.addStudent(27, "Faina", "woman", 4.4);
             Student.addStudent(21, "Carlos", "man", 3);
             Student.addStudent(20, "Alica", "woman", 3.9);
        //     Student.delStudent("Dana");

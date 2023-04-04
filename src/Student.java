@@ -31,18 +31,20 @@ public class Student extends Man implements Comparable, Cloneable {
 
     public static void sortName() throws CloneNotSupportedException {
         for (int i = 0; i < groop.size()-1; i++) {
+            for (int j = 0; j < groop.size()-1; j++) {
             Student aa;
-           if  (groop.get(i).getName().compareTo(groop.get(i+1).getName())>0) {
-               aa = (Student)(groop.get(i)).clone();
-               groop.set(i, groop.get(i + 1));
-               groop.set(i + 1, aa);
+            Student bb;
+           if  ((groop.get(j).getName().compareTo(groop.get(j+1).getName()))>0) {
+               aa = groop.get(j).clone();
+               bb = groop.get(j+1).clone();
+               groop.set(j, bb);
+               groop.set(j + 1, aa);
            }
         }
 
+        }
+
     }
-
-
-
 
 
 
@@ -81,8 +83,15 @@ public class Student extends Man implements Comparable, Cloneable {
         return 0;
     }
 
+  /*  public int CompareTo(Object b) {
+        Student anotherstudent = (Student) b;
+        return 3;
+    }*/
+
+
+
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    protected Student clone() throws CloneNotSupportedException {
+        return (Student) super.clone();
     }
 }

@@ -23,8 +23,9 @@ public class Main{
         }
 
 
-        Student.sortName();
+        //   Student.sortName();
 
+        Student.sortPar(0);
         for (Student e : Student.groop) {
             System.out.println(e);
         }

@@ -46,6 +46,24 @@ public class Student extends Man implements Comparable, Cloneable {
 
     }
 
+    public static void sortPar(int f) {
+        switch (f) {
+            case 0:
+                try {
+                    Student.sortName();
+                } catch (CloneNotSupportedException e) {
+                    e.printStackTrace();
+                }
+                break;
+            case 1:
+                Collections.sort(Student.groop);
+                break;
+            case 2:
+                System.out.println("Why did yot type 2?");
+                break;
+        }
+    }
+
 
 
     public Student(int age, String name, String sex, double amark) {

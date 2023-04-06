@@ -46,23 +46,24 @@ public class Student extends Man implements Comparable, Cloneable {
 
     }
 
-    public static void sortPar(int f) {
-        switch (f) {
-            case 0:
-                try {
-                    Student.sortName();
-                } catch (CloneNotSupportedException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case 1:
-                Collections.sort(Student.groop);
-                break;
-            case 2:
-                System.out.println("Why did yot type 2?");
-                break;
-        }
-    }
+//    public static void sortPar(int f) {
+//      //  System.out.println("Type digity: 0 - sort by name, 1 - sort by age, 2 - nothing do ");
+//        switch (f) {
+//            case 0:
+//                try {
+//                    Student.sortName();
+//                } catch (CloneNotSupportedException e) {
+//                    e.printStackTrace();
+//                }
+//                break;
+//            case 1:
+//                Collections.sort(Student.groop);
+//                break;
+//            case 2:
+//                System.out.println("Why did yot type 2?");
+//                break;
+//        }
+//    }
 
 
 
@@ -91,20 +92,38 @@ public class Student extends Man implements Comparable, Cloneable {
 
     @Override
     public int compareTo(Object o) {
-
+        System.out.println(" Chislo");
+        Scanner scanner = new Scanner(System.in);
+        int t = (int) scanner.nextInt();
         Student anotherstudent = (Student) o;
-        if (this.getAge() > anotherstudent.getAge())
-        {return 1;}
+        switch (t) {
+            case 0 :
+            if (this.getAge() > anotherstudent.getAge()) {
+                return 1;
+            }
 
-        if (this.getAge() < anotherstudent.getAge())
-        { return -1;}
-        return 0;
+            if (this.getAge() < anotherstudent.getAge()) {
+                return -1;
+            }
+            return 0;
+
+            case 1:
+            if (this.getAmark()> anotherstudent.getAmark())  {
+                return 1;
+            }
+            if (this.getAmark()< anotherstudent.getAmark()) {
+                return -1;
+            }
+                return 0;
+
+            default:
+                return 1;
+        }
+
+
     }
 
-  /*  public int CompareTo(Object b) {
-        Student anotherstudent = (Student) b;
-        return 3;
-    }*/
+
 
 
 

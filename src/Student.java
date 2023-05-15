@@ -5,28 +5,28 @@ public class Student extends Man implements Comparable, Cloneable {
     public static int count = 0;
     private double amark;
 
-    static ArrayList<Student> groop = new ArrayList<>(10);
 
-    public static void addStudent(int ag, String nam, String sx, double mr) throws MyException {
-        if (count >= 10) throw new MyException();
 
-        groop.add(new Student(ag, nam, sx, mr));
-        count++;
+
+       static ArrayList<Student> groop = new ArrayList(10);
+
+       public static void addStudent(int ag, String nam, String sx, double mr) throws MyException {
+           if (count >= 10) throw new MyException();
+           groop.add(new Student(ag, nam, sx, mr));
+           count++;
 
 
     }
 
     public static void delStudent(String name) {
 
-        Iterator<Student> iter = groop.iterator();
+           Iterator<Student> iter = groop.iterator();
         while (iter.hasNext()) {
             if (name.equals(iter.next().getName())) {
                 iter.remove();
                 count--;
             }
-
         }
-
     }
 
     public static void sortName() throws CloneNotSupportedException {
@@ -43,28 +43,7 @@ public class Student extends Man implements Comparable, Cloneable {
         }
 
         }
-
     }
-
-//    public static void sortPar(int f) {
-//      //  System.out.println("Type digity: 0 - sort by name, 1 - sort by age, 2 - nothing do ");
-//        switch (f) {
-//            case 0:
-//                try {
-//                    Student.sortName();
-//                } catch (CloneNotSupportedException e) {
-//                    e.printStackTrace();
-//                }
-//                break;
-//            case 1:
-//                Collections.sort(Student.groop);
-//                break;
-//            case 2:
-//                System.out.println("Why did yot type 2?");
-//                break;
-//        }
-//    }
-
 
 
     public Student(int age, String name, String sex, double amark) {
@@ -92,12 +71,10 @@ public class Student extends Man implements Comparable, Cloneable {
 
     @Override
     public int compareTo(Object o) {
-        System.out.println(" Chislo");
-        Scanner scanner = new Scanner(System.in);
-        int t = (int) scanner.nextInt();
+
+
         Student anotherstudent = (Student) o;
-        switch (t) {
-            case 0 :
+
             if (this.getAge() > anotherstudent.getAge()) {
                 return 1;
             }
@@ -106,25 +83,7 @@ public class Student extends Man implements Comparable, Cloneable {
                 return -1;
             }
             return 0;
-
-            case 1:
-            if (this.getAmark()> anotherstudent.getAmark())  {
-                return 1;
-            }
-            if (this.getAmark()< anotherstudent.getAmark()) {
-                return -1;
-            }
-                return 0;
-
-            default:
-                return 1;
         }
-
-
-    }
-
-
-
 
 
     @Override

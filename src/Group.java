@@ -1,7 +1,9 @@
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
-public class Group {
+public class Group implements Armycom {
 
 
     public static void addStudentInteractive()  {
@@ -61,6 +63,11 @@ public static Double addMark() throws  MyException {
 
     return amark;
 }
+
+    @Override
+    public void goden(List<Student> c) {
+        Collections.sort(c,new StudentComparator());
+    }
 }
 
 

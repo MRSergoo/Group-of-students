@@ -4,7 +4,7 @@ public class Main{
 
     public static void main(String[] args) throws CloneNotSupportedException {
 
-       // Group.addStudentInteractive();
+        Group.addStudentInteractive();
 
         try {
             Student.addStudent(29, "Bob", "man", 5);
@@ -12,7 +12,7 @@ public class Main{
             Student.addStudent(27, "Faina", "woman", 4.4);
             Student.addStudent(21, "Carlos", "man", 3);
             Student.addStudent(20, "Alica", "woman", 3.9);
-       //     Student.delStudent("Dana");
+            Student.delStudent("Dana");
             Student.addStudent(33, "Wienne", "woman", 4.9);
             Student.addStudent(31, "Kate", "woman", 4.8);
         } catch (MyException e) {
@@ -20,11 +20,11 @@ public class Main{
         }
 
 
-        //   Student.sortName();
+         Student.sortName();
 
- //      Student.sortPar(0);
 
-        Collections.sort(Student.groop);
+//        Group gr = new Group();
+//        gr.goden(Student.groop);
 
         for (Student e : Student.groop) {
             System.out.println(e);
@@ -32,18 +32,6 @@ public class Main{
 
 
 
-//        for (Student e : Student.groop) {
-//            System.out.println(e);
-//        }
-//
-//
-//        System.out.println();
-//
-//        Collections.sort(Student.groop);
-//
-//        for (Student e : Student.groop) {
-//            System.out.println(e);
-//        }
 
     }
 }

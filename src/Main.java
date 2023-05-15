@@ -22,15 +22,13 @@ public class Main{
 
          Student.sortName();
 
-
-//        Group gr = new Group();
-//        gr.goden(Student.groop);
+        Collections.sort(Student.groop, new StudentComparator());
 
         for (Student e : Student.groop) {
             System.out.println(e);
         }
 
-
+        Armycom.goden(Student.groop);
 
 
     }

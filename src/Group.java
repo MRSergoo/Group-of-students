@@ -64,10 +64,9 @@ public static Double addMark() throws  MyException {
     return amark;
 }
 
-    @Override
-    public void goden(List<Student> c) {
-        Collections.sort(c,new StudentComparator());
-    }
+
+
+
 }
 
 
